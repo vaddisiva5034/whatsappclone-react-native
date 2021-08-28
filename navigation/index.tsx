@@ -12,13 +12,19 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 import { ColorSchemeName } from "react-native";
 import { View as NativeView } from "react-native";
-import { Octicons, MaterialCommunityIcons } from "@expo/vector-icons";
+import {
+  Octicons,
+  MaterialCommunityIcons,
+  MaterialIcons,
+  Ionicons,
+} from "@expo/vector-icons";
 import Colors from "../constants/Colors";
 import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import { RootStackParamList } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { MainNavigator } from "./MainNavigator";
+import { ChatRoomScreen } from "../screens/ChatRoomScreen";
 
 export default function Navigation({
   colorScheme,
@@ -80,6 +86,31 @@ function RootNavigator() {
         name="NotFound"
         component={NotFoundScreen}
         options={{ title: "Oops!" }}
+      />
+      <Stack.Screen
+        name="chatRoom"
+        component={ChatRoomScreen}
+        options={({ route }) => ({
+          headerTitle: route?.params?.name || "hello",
+
+          headerRight: () => (
+            <NativeView
+              style={{
+                flexDirection: "row",
+                width: 120,
+                justifyContent: "space-between",
+              }}
+            >
+              <Ionicons name="videocam" size={24} color="white" />
+              <MaterialIcons name="call" size={24} color="white" />
+              <MaterialCommunityIcons
+                name="dots-vertical"
+                size={24}
+                color={"white"}
+              />
+            </NativeView>
+          ),
+        })}
       />
       <Stack.Group screenOptions={{ presentation: "modal" }}>
         <Stack.Screen name="Modal" component={ModalScreen} />

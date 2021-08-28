@@ -15,11 +15,17 @@ declare global {
     interface RootParamList extends RootStackParamList {}
   }
 }
+interface charRoomProps {
+  id: string;
+  name: string;
+  imageUri?: string;
+}
 
 export type RootStackParamList = {
   Root: NavigatorScreenParams<RootTabParamList> | undefined;
   Modal: undefined;
   NotFound: undefined;
+  chatRoom: charRoomProps | undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =
