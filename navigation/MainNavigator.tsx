@@ -8,6 +8,7 @@ import { RootTabParamList, RootTabScreenProps } from "../types";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import { createMaterialTopTabNavigator } from "@react-navigation/material-top-tabs";
 import { Fontisto } from "@expo/vector-icons";
+import { CameraScreen } from "../screens/CameraScreen";
 const TopTab = createMaterialTopTabNavigator<RootTabParamList>();
 
 function TabBarIcon(props: {
@@ -37,7 +38,7 @@ export function MainNavigator() {
     >
       <TopTab.Screen
         name="camera"
-        component={() => null}
+        component={CameraScreen}
         options={{
           tabBarIcon: (props: any) => (
             <Fontisto name="camera" color={props.color} size={16} />
