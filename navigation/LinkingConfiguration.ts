@@ -17,20 +17,24 @@ const linking: LinkingOptions<RootStackParamList> = {
         screens: {
           camera: {
             screens: {
-              TabOneScreen: "one",
+              TabOneScreen: "camera",
             },
           },
           chats: {
             screens: {
-              TabOneScreen: "one",
+              TabOneScreen: "chats",
             },
           },
           status: {
             screens: {
-              TabTwoScreen: "two",
+              TabTwoScreen: "staus",
             },
           },
-          calls: {},
+          calls: {
+            screens: {
+              TabTwoScreen: "calls",
+            },
+          },
         },
       },
       Modal: "modal",

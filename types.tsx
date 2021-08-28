@@ -41,7 +41,7 @@ export type RootTabScreenProps<Screen extends keyof RootTabParamList> =
 export interface User {
   id: string;
   name: string;
-  imageUrl: string;
+  imageUri: string;
 }
 
 export interface Message {
