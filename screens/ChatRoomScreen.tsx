@@ -3,6 +3,7 @@ import { Text, FlatList, ImageBackground } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { chat } from "../mock data/chat.mockdata";
 import { ChatMessage } from "../components/ChatMessage/ChatMessage";
+import { InputBox } from "../components/InputBox/InputBox";
 export const ChatRoomScreen = () => {
   const route = useRoute();
 
@@ -16,7 +17,9 @@ export const ChatRoomScreen = () => {
       <FlatList
         data={chat.messages}
         renderItem={({ item }) => <ChatMessage message={item} />}
+        initialScrollIndex={chat.messages.length - 1}
       />
+      <InputBox />
     </ImageBackground>
   );
 };

@@ -3,6 +3,8 @@ import { StyleSheet, FlatList } from "react-native";
 import { ChatListItem } from "../components/ChatListItem";
 
 import EditScreenInfo from "../components/EditScreenInfo";
+import { InputBox } from "../components/InputBox/InputBox";
+import { NewMessageButton } from "../components/NewMessageButton/NewMessageButton";
 import { Text, View } from "../components/Themed";
 import { chatsList } from "../mock data/chatlist.mockdata";
 import { ChatRoom, RootTabScreenProps } from "../types";
@@ -15,6 +17,7 @@ export function ChatsScreen({ navigation }: RootTabScreenProps<"chats">) {
         renderItem={({ item }) => <ChatListItem chatRoom={item} />}
         keyExtractor={(item) => item.id}
       ></FlatList>
+      <NewMessageButton />
     </View>
   );
 }

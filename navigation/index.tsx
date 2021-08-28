@@ -25,6 +25,7 @@ import { RootStackParamList } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
 import { MainNavigator } from "./MainNavigator";
 import { ChatRoomScreen } from "../screens/ChatRoomScreen";
+import { ContactsScreen } from "../screens/ContactsScreen";
 
 export default function Navigation({
   colorScheme,
@@ -103,6 +104,30 @@ function RootNavigator() {
             >
               <Ionicons name="videocam" size={24} color="white" />
               <MaterialIcons name="call" size={24} color="white" />
+              <MaterialCommunityIcons
+                name="dots-vertical"
+                size={24}
+                color={"white"}
+              />
+            </NativeView>
+          ),
+        })}
+      />
+      <Stack.Screen
+        name="contacts"
+        component={ContactsScreen}
+        options={({ route }) => ({
+          headerTitle: "Select Contact",
+
+          headerRight: () => (
+            <NativeView
+              style={{
+                flexDirection: "row",
+                width: 60,
+                justifyContent: "space-between",
+              }}
+            >
+              <Octicons name="search" size={24} color={"white"} />
               <MaterialCommunityIcons
                 name="dots-vertical"
                 size={24}
